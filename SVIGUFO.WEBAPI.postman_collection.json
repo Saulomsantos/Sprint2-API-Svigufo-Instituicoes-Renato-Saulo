@@ -1,0 +1,136 @@
+{
+	"variables": [],
+	"info": {
+		"name": "SVIGUFO.WEBAPI",
+		"_postman_id": "87bc2a45-3d2f-4270-6357-4955a12d7b7b",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "TIPOS_EVENTOS",
+			"description": "",
+			"item": [
+				{
+					"name": "TiposEventos.Listar",
+					"request": {
+						"url": "http://localhost:5000/Api/TiposEventos/",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "TiposEventos.Cadastrar",
+					"request": {
+						"url": "http://localhost:5000/Api/TiposEventos/",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"nome\" : \"Web Design\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "TiposEventos.Deletar",
+					"request": {
+						"url": "http://localhost:5000/Api/TiposEventos/2",
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "TiposEventos.Atualizar",
+					"request": {
+						"url": "http://localhost:5000/Api/TiposEventos/1",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"nome\" : \"Linkedin\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "INSTITUICOES",
+			"description": "",
+			"item": [
+				{
+					"name": "Instituicoes.Listar",
+					"request": {
+						"url": "http://localhost:5000/Api/Instituicoes",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Instituicoes.Gravar",
+					"request": {
+						"url": "http://localhost:5000/Api/Instituicoes",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"nomefantasia\": \"SAULO COMPANY\",\n\t\"razaosocial\": \"SAULO\",\n\t\"cnpj\": \"22222222222222\",\n\t\"logradouro\": \"RUA DOZE, 12\",\n\t\"cep\": \"12345678\",\n\t\"uf\": \"SP\",\n\t\"cidade\": \"SP\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Instituicoes.Editar",
+					"request": {
+						"url": "http://localhost:5000/Api/Instituicoes/3",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"nomeFantasia\": \"FERNANDO COMPANY\",\n\t\"razaoSocial\": \"FERNANDO\",\n\t\"cnpj\": \"33333333333333\",\n\t\"logradouro\": \"RUA QUARENTA, 40\",\n\t\"cep\": \"12345678\",\n\t\"uf\": \"SP\",\n\t\"cidade\": \"SP\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

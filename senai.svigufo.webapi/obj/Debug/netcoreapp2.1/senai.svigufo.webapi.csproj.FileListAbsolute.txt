@@ -1,0 +1,14 @@
+D:\1s2019\sprint-2-backend\senai.svigufo.webapi\senai.svigufo.webapi\bin\Debug\netcoreapp2.1\senai.svigufo.webapi.deps.json
+D:\1s2019\sprint-2-backend\senai.svigufo.webapi\senai.svigufo.webapi\bin\Debug\netcoreapp2.1\senai.svigufo.webapi.runtimeconfig.json
+D:\1s2019\sprint-2-backend\senai.svigufo.webapi\senai.svigufo.webapi\bin\Debug\netcoreapp2.1\senai.svigufo.webapi.runtimeconfig.dev.json
+D:\1s2019\sprint-2-backend\senai.svigufo.webapi\senai.svigufo.webapi\bin\Debug\netcoreapp2.1\senai.svigufo.webapi.dll
+D:\1s2019\sprint-2-backend\senai.svigufo.webapi\senai.svigufo.webapi\obj\Debug\netcoreapp2.1\senai.svigufo.webapi.csprojAssemblyReference.cache
+D:\1s2019\sprint-2-backend\senai.svigufo.webapi\senai.svigufo.webapi\obj\Debug\netcoreapp2.1\senai.svigufo.webapi.csproj.CoreCompileInputs.cache
+D:\1s2019\sprint-2-backend\senai.svigufo.webapi\senai.svigufo.webapi\obj\Debug\netcoreapp2.1\senai.svigufo.webapi.RazorAssemblyInfo.cache
+D:\1s2019\sprint-2-backend\senai.svigufo.webapi\senai.svigufo.webapi\obj\Debug\netcoreapp2.1\senai.svigufo.webapi.RazorAssemblyInfo.cs
+D:\1s2019\sprint-2-backend\senai.svigufo.webapi\senai.svigufo.webapi\obj\Debug\netcoreapp2.1\senai.svigufo.webapi.AssemblyInfoInputs.cache
+D:\1s2019\sprint-2-backend\senai.svigufo.webapi\senai.svigufo.webapi\obj\Debug\netcoreapp2.1\senai.svigufo.webapi.AssemblyInfo.cs
+D:\1s2019\sprint-2-backend\senai.svigufo.webapi\senai.svigufo.webapi\obj\Debug\netcoreapp2.1\senai.svigufo.webapi.RazorTargetAssemblyInfo.cache
+D:\1s2019\sprint-2-backend\senai.svigufo.webapi\senai.svigufo.webapi\bin\Debug\netcoreapp2.1\senai.svigufo.webapi.pdb
+D:\1s2019\sprint-2-backend\senai.svigufo.webapi\senai.svigufo.webapi\obj\Debug\netcoreapp2.1\senai.svigufo.webapi.dll
+D:\1s2019\sprint-2-backend\senai.svigufo.webapi\senai.svigufo.webapi\obj\Debug\netcoreapp2.1\senai.svigufo.webapi.pdb
