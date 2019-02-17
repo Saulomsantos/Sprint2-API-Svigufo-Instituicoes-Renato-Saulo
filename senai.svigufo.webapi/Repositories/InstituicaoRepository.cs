@@ -131,5 +131,21 @@ namespace senai.svigufo.webapi.Repositories
                 cmd.ExecuteNonQuery();
             }
         }
+
+        public void Deletar(int id)
+        {
+            using (SqlConnection con = new SqlConnection(StringConexao))
+            {
+                string QueryDeletar = "DELETE FROM TIPOS_EVENTOS WHERE ID = @ID";
+
+                SqlCommand cmd = new SqlCommand(QueryDeletar, con);
+
+                cmd.Parameters.AddWithValue("@ID", id);
+
+                con.Open();
+
+                cmd.ExecuteNonQuery();
+            }
+        }
     }
 }

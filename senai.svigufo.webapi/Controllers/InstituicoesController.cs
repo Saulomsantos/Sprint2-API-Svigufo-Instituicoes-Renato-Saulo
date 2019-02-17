@@ -11,6 +11,9 @@ namespace senai.svigufo.webapi.Controllers
     [ApiController]
     public class InstituicoesController : ControllerBase
     {
+
+        List<TipoEventoDomain> Instituicoes = new List<TipoEventoDomain>();
+        
         private IInstituicaoRepository InstituicaoRepository { get; set; }
 
         public InstituicoesController()
@@ -22,6 +25,23 @@ namespace senai.svigufo.webapi.Controllers
         public IEnumerable<InstituicaoDomain> Get()
         {
             return InstituicaoRepository.Listar();
+        }
+
+        [HttpGet("{id}")]
+        public IActionResult BuscarPorId(int id)
+        {
+            // Busca um tipo de evento pelo seu id
+            TipoEventoDomain Instituicao = Instituicoes.Find(x => x.Id == id);
+
+            // Verifica se foi encontrado na lista a Instituicao
+            if (Instituicao == null)
+            {
+                // Retorna não encontrado
+                return NotFound();
+            }
+
+            // Retorna ok e a Instituicao
+            return Ok(Instituicao);
         }
 
         [HttpPost] //Verbo para gravar
@@ -41,6 +61,14 @@ namespace senai.svigufo.webapi.Controllers
             //Chama o método para editar passando a InstituicaoRecebida
             //InstituicaoRepository.Editar(InstituicaoRecebida);
             InstituicaoRepository.Editar(id, InstituicaoRecebida);
+
+            return Ok();
+        }
+
+        [HttpDelete("{id}")] // Verbo para deletar um registro, passa o id no recurso
+        public IActionResult Delete(int id)
+        {
+            
 
             return Ok();
         }

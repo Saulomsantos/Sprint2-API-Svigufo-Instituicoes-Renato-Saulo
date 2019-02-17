@@ -23,5 +23,11 @@ namespace senai.svigufo.webapi.Interfaces
         /// <param name="Instituicao">Objeto Instituicao</param>
         //void Editar(InstituicaoDomain Instituicao);
         void Editar(int id, InstituicaoDomain Instituicao);
+
+        /// <summary>
+        /// Deleta uma instituicao
+        /// </summary>
+        /// <param name="Instituicao">Id da Instituicao</param>
+        void Deletar(int id);
     }
 }
