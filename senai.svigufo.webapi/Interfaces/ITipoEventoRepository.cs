@@ -3,6 +3,9 @@ using System.Collections.Generic;
 
 namespace senai.svigufo.webapi.Interfaces
 {
+    /// <summary>
+    /// Interface responsável pelo repositório Tipo Evento
+    /// </summary>
     public interface ITipoEventoRepository
     {
         /// <summary>
@@ -26,7 +29,7 @@ namespace senai.svigufo.webapi.Interfaces
         /// <summary>
         /// Deleta um tipo de evento
         /// </summary>
-        /// <param name="tipoEvento">Id do tipo de evento</param>
+        /// <param name="id">Id do tipo de evento</param>
         void Deletar(int id);
     }
 }
