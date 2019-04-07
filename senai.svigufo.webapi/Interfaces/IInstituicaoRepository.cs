@@ -3,7 +3,10 @@ using System.Collections.Generic;
 
 namespace senai.svigufo.webapi.Interfaces
 {
-    interface IInstituicaoRepository
+    /// <summary>
+    /// Interface responsável pelo repositório da Instituição
+    /// </summary>
+    public interface IInstituicaoRepository
     {
         /// <summary>
         /// Lista todas as Instituições
@@ -14,27 +17,27 @@ namespace senai.svigufo.webapi.Interfaces
         /// <summary>
         /// Busca uma instituição pelo id
         /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
+        /// <param name="id">Id da instituição</param>
+        /// <returns>Retorna uma instituição</returns>
         InstituicaoDomain GetById(int id);
 
         /// <summary>
         /// Grava uma nova instituição
         /// </summary>
-        /// <param name="instituicao">Objeto Instituicao</param>
+        /// <param name="instituicao">Recebe um objeto instituicao</param>
         void Gravar(InstituicaoDomain instituicao);
 
         /// <summary>
         /// Edita uma instituição
         /// </summary>
-        /// <param name="instituicao">Objeto Instituicao</param>
-        //void Editar(InstituicaoDomain Instituicao);
+        /// <param name="id">Id da instituição</param>
+        /// <param name="instituicao">Recebe um objeto instituição</param>
         void Editar(int id, InstituicaoDomain instituicao);
 
         /// <summary>
-        /// Deleta uma instituicao
+        /// Deleta uma instituição
         /// </summary>
-        /// <param name="instituicao">Id da Instituicao</param>
+        /// <param name="id">Id da instituição</param>
         void Deletar(int id);
     }
 }
