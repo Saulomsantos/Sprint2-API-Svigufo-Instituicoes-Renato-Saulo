@@ -21,54 +21,85 @@ namespace senai.svigufo.webapi.Controllers
             InstituicaoRepository = new InstituicaoRepository();
         }
 
+        /// <summary>
+        /// Retorna uma lista de Instiuições
+        /// </summary>
+        /// <returns>Retorna uma list de Instituições</returns>
         [HttpGet]
-        public IEnumerable<InstituicaoDomain> Get()
+        //public IEnumerable<InstituicaoDomain> Get()
+        public IActionResult Get()
         {
-            return InstituicaoRepository.Listar();
+            //return InstituicaoRepository.Listar();
+            //Recomendado usar returnOk() pelas boas práticas de retornar um status code
+            return Ok(InstituicaoRepository.Listar());
         }
 
         [HttpGet("{id}")]
-        public IActionResult BuscarPorId(int id)
+        public IActionResult GetById(int id)
         {
-            // Busca um tipo de evento pelo seu id
-            TipoEventoDomain Instituicao = Instituicoes.Find(x => x.Id == id);
+            // Busca uma instituição pelo seu id
+            InstituicaoDomain instituicao = InstituicaoRepository.GetById(id);
 
             // Verifica se foi encontrado na lista a Instituicao
-            if (Instituicao == null)
+            if (instituicao == null)
             {
                 // Retorna não encontrado
                 return NotFound();
             }
 
             // Retorna ok e a Instituicao
-            return Ok(Instituicao);
-        }
-
-        [HttpPost] //Verbo para gravar
-        public IActionResult Post(InstituicaoDomain InstituicaoRecebida)
-        {
-            //Chama o método para gravar passando a InstituicaoRecebida
-            InstituicaoRepository.Gravar(InstituicaoRecebida);
-
-            //Retorna Ok e a lista com as instituições
             return Ok();
         }
 
-        [HttpPut("{id}")] //Verbo para editar
-        public IActionResult Put(int id, InstituicaoDomain InstituicaoRecebida)
+        /// <summary>
+        /// Cadastra uma instituição
+        /// </summary>
+        /// <param name="instituicao">Recebe uma instituição</param>
+        /// <returns>Retorna um status code</returns>
+        [HttpPost] //Verbo para gravar
+        public IActionResult Post(InstituicaoDomain instituicao)
         {
-            InstituicaoRecebida.Id = id;
+            try
+            {
+                //Chama o método para gravar passando a InstituicaoRecebida
+                InstituicaoRepository.Gravar(instituicao);
+
+                //Retorna Ok e a lista com as instituições
+                return Ok();
+            }
+            catch
+            {
+                return BadRequest();
+            }
+            
+        }
+
+        /// <summary>
+        /// Atualiza uma instituição
+        /// </summary>
+        /// <param name="id">id da instituição a ser alterada</param>
+        /// <param name="instituicao">dados da instituição</param>
+        /// <returns>Retorna um status code</returns>
+        [HttpPut("{id}")] //Verbo para editar
+        public IActionResult Put(int id, InstituicaoDomain instituicao)
+        {
+            instituicao.Id = id;
             //Chama o método para editar passando a InstituicaoRecebida
             //InstituicaoRepository.Editar(InstituicaoRecebida);
-            InstituicaoRepository.Editar(id, InstituicaoRecebida);
+            InstituicaoRepository.Editar(id, instituicao);
 
             return Ok();
         }
 
+        /// <summary>
+        /// Deleta uma instituição
+        /// </summary>
+        /// <param name="id">id da instituição que será deletada</param>
+        /// <returns>Retorna um status code</returns>
         [HttpDelete("{id}")] // Verbo para deletar um registro, passa o id no recurso
         public IActionResult Delete(int id)
         {
-            
+            InstituicaoRepository.Deletar(id);
 
             return Ok();
         }

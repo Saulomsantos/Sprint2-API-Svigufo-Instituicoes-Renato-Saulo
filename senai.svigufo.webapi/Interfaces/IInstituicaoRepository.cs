@@ -12,22 +12,29 @@ namespace senai.svigufo.webapi.Interfaces
         List<InstituicaoDomain> Listar();
 
         /// <summary>
+        /// Busca uma instituição pelo id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        InstituicaoDomain GetById(int id);
+
+        /// <summary>
         /// Grava uma nova instituição
         /// </summary>
-        /// <param name="Instituicao">Objeto Instituicao</param>
-        void Gravar(InstituicaoDomain Instituicao);
+        /// <param name="instituicao">Objeto Instituicao</param>
+        void Gravar(InstituicaoDomain instituicao);
 
         /// <summary>
         /// Edita uma instituição
         /// </summary>
-        /// <param name="Instituicao">Objeto Instituicao</param>
+        /// <param name="instituicao">Objeto Instituicao</param>
         //void Editar(InstituicaoDomain Instituicao);
-        void Editar(int id, InstituicaoDomain Instituicao);
+        void Editar(int id, InstituicaoDomain instituicao);
 
         /// <summary>
         /// Deleta uma instituicao
         /// </summary>
-        /// <param name="Instituicao">Id da Instituicao</param>
+        /// <param name="instituicao">Id da Instituicao</param>
         void Deletar(int id);
     }
 }
