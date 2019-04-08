@@ -2,6 +2,9 @@
 
 namespace senai.svigufo.webapi.Domains
 {
+    /// <summary>
+    /// Classe que representa a tabela convites
+    /// </summary>
     public class ConviteDomain
     {
         public int Id { get; set; }
