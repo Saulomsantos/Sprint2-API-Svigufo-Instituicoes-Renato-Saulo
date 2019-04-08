@@ -6,12 +6,18 @@ using System.Collections.Generic;
 
 namespace senai.svigufo.webapi.Controllers
 {
+    /// <summary>
+    /// Controller responsável pelos endpoints referentes aos Tipos Eventos
+    /// </summary>
     [Produces("application/json")]
     [Route("api/[controller]")]
     [ApiController] //Implementa funcionalidades em nosso Controller
+
     public class TiposEventosController : ControllerBase
     {
+        // Cria uma lista tiposEventos
         List<TipoEventoDomain> tiposEventos = new List<TipoEventoDomain>()
+
         // Cada par de { representa um arranjo JSON
         {
             // Cada par de { representa um objeto JSON
@@ -20,28 +26,29 @@ namespace senai.svigufo.webapi.Controllers
             new TipoEventoDomain{ Id = 3, Nome = "Gestão"}
         };
 
-        // Cria um objeto do tipo ITipoEventoRepository
+        // Define um objeto TipoEventoRepository para chamada dos métodos
         private ITipoEventoRepository TipoEventoRepository { get; set; }
 
         public TiposEventosController()
         {
-            // Cria uma instancia de tipoeventorepository
+            // Cria uma instancia de tipoEventoRepository
             TipoEventoRepository = new TipoEventoRepository();
         }
 
-        //[HttpGet]
-        //public string Get()
-        //{
+        // [HttpGet]
+        // public string Get()
+        // {
         //    return "Recebi sua requisição";
-        //}
+        // }
 
         /// <summary>
-        /// Retorna uma lista de eventos
+        /// Retorna uma lista de tipos de eventos
         /// </summary>
-        /// <returns>Lista de eventos</returns>
+        /// <returns>Lista de Eventos</returns>
         [HttpGet]
         public IEnumerable<TipoEventoDomain> Get()
         {
+            // Retorna uma lista de tipos eventos
             return TipoEventoRepository.Listar();
         }
 
@@ -50,7 +57,6 @@ namespace senai.svigufo.webapi.Controllers
         /// </summary>
         /// <param name="id">Id do tipo do evento</param>
         /// <returns>Retorna um tipo de evento</returns>
-
         [HttpGet("{id}")]
         public IActionResult GetById(int id)
         {
@@ -68,44 +74,73 @@ namespace senai.svigufo.webapi.Controllers
             return Ok(tipoEvento);
         }
 
+        /// <summary>
+        /// Cadastra um tipo de evento
+        /// </summary>
+        /// <param name="tipoEventoRecebido">Recebe um objeto tipoEventoRecebido</param>
+        /// <returns></returns>
         [HttpPost] // Verbo para inserir
         // [FromBody] Pega os dados enviados para a api (vai antes do TipoEventoDomain)
-        public IActionResult Post(TipoEventoDomain tipoEvento)
+        public IActionResult Post(TipoEventoDomain tipoEventoRecebido)
         {
             // Adiciona o tipo de evento recebido na Api
-            //tiposEventos.Add(new TipoEventoDomain
-            //{
+            // tiposEventos.Add(new TipoEventoDomain
+            // {
             //    Id = tiposEventos.Count + 1,
             //    Nome = tipoEvento.Nome
-            //});
+            // });
 
-            TipoEventoRepository.Cadastrar(tipoEvento);
+            // Cadastra um tipo de evento recebido na requisição
+            TipoEventoRepository.Cadastrar(tipoEventoRecebido);
 
-            // Retorna Ok e a lista com os tipos de eventos
+            // Retorna um status code 200
             return Ok();
         }
 
+        /// <summary>
+        /// Atualiza um tipo de evento passando o id no corpo do JSON
+        /// </summary>
+        /// <param name="tipoEventoRecebido">Recebe um objeto tipoEventoRecebido</param>
+        /// <returns>Retorna um status code</returns>
         [HttpPut] // Verbo para atualizar
         public IActionResult Put(TipoEventoDomain tipoEventoRecebido)
         {
+            // Altera um tipo de evento passando os dados do objeto da requisição
             TipoEventoRepository.Alterar(tipoEventoRecebido);
 
-            return Ok(tipoEventoRecebido);
+            // Retorna um status code 200
+            return Ok();
         }
 
-        //[HttpPut("{id}")] // Verbo para alterar, passa o id no recurso
-        //public IActionResult Put(int id, TipoEventoDomain tipoEventoRecebido)
-        //{
+        // Outra forma
+        // [HttpPut("{id}")] // Verbo para alterar, passa o id no recurso
+        // public IActionResult Put(int id, TipoEventoDomain tipoEventoRecebido)
+        // {
         //    return Ok(tipoEventoRecebido);
-        //}
+        // }
 
+        /// <summary>
+        /// Deleta um tipo de evento passando o id na URL
+        /// </summary>
+        /// <param name="id">Id do tipo de evento a ser excluído</param>
+        /// <returns>Retorna um status code</returns>
         [HttpDelete("{id}")] // Verbo para deletar um registro, passa o id no recurso
         public IActionResult Delete(int id)
         {
-            //tiposEventos.Remove(tiposEventos.Find(x => x.Id == id));
+            // Busca um tipo de evento pelo seu id
+            TipoEventoDomain tipoEvento = tiposEventos.Find(x => x.Id == id);
 
+            // Verifica se foi encontrado na lista o tipo de evento
+            if (tipoEvento == null)
+            {
+                // Retorna um status code 404 Not Found
+                return NotFound();
+            }
+
+            // Se for encontrado, deleta o tipo de evento
             TipoEventoRepository.Deletar(id);
 
+            // Retorna um status code 200
             return Ok();
         }
     }
