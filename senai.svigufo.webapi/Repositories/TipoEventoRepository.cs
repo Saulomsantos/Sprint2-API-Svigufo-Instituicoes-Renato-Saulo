@@ -13,7 +13,7 @@ namespace senai.svigufo.webapi.Repositories
     {
         // Na dúvida, procurar no site connection string qual a string de conexão do banco utilizado
         // private string StringConexao = "Data Source=.\\SqlExpress; initial catalog=SENAI_SVIGUFO_MANHA_BACKEND;user id=sa; pwd=132";
-        private string StringConexao = "Data Source=.\\SqlDeveloper; initial catalog=SENAI_SVIGUFO_MANHA_BACKEND; integrated security=true";
+        private string StringConexao = "Data Source=.\\SqlDeveloper; initial catalog=SENAI_SVIGUFO_MANHA_BACKEND; integrated security=true;";
 
         /// <summary>
         /// Altera um tipo de evento

@@ -80,7 +80,7 @@ namespace Senai.SviGufo.WebApi.Controllers
                     token = new JwtSecurityTokenHandler().WriteToken(token)
                 });
             }
-            catch // Caso dê erro
+            catch (Exception ex) // Caso dê erro
             {
                 // Retorna um status code 400 Bad Request
                 return BadRequest();

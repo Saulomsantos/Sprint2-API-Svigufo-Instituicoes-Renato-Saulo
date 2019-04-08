@@ -11,7 +11,7 @@ namespace senai.svigufo.webapi.Repositories
     public class UsuarioRepository : IUsuarioRepository
     {
         // Define a string de conexão
-        private string StringConexao = "DataSource=.\\SqlDeveloper; initial catalog=SENAI_SVIGUFO_MANHA_BACKEND; integrated security=true;";
+        private string StringConexao = "Data Source=.\\SqlDeveloper; initial catalog=SENAI_SVIGUFO_MANHA_BACKEND; integrated security=true;";
 
         /// <summary>
         /// Busca um usuário passando o email e a senha
