@@ -11,7 +11,7 @@ namespace senai.svigufo.webapi.Controllers
     /// </summary>
     [Produces("application/json")]
     [Route("api/[controller]")]
-    [ApiController] //Implementa funcionalidades em nosso Controller
+    [ApiController] // Implementa funcionalidades em nosso Controller
 
     public class TiposEventosController : ControllerBase
     {
